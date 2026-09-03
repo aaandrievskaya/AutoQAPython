@@ -8,4 +8,9 @@ sum1 = int(input())
 if sum1==sum:
     print('Great!')
 else:
-    print('Loser!')
+    print('Try again')
+    sum2 = int(input())
+    if sum2==sum:
+        print('Great!')
+    else:
+        print('Loser!')
