@@ -10,6 +10,11 @@ else:
     print('Try again')
     sum2 = int(input())
     if sum2==sum:
-        print('Great!')
+        print('Great!!')
     else:
-        print('Loser!!!!!')
+        print('Try again')
+        sum3 = int(input())
+        if sum3==sum:
+            print('Great!!')
+        else:
+            print('Loser!!!!!')
