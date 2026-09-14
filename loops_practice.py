@@ -1,3 +1,4 @@
+#################################2.1###################################
 #функция с match-case
 def get_day_name(day: int) -> str:
     match day:
@@ -41,7 +42,7 @@ print(words)                         # ['str0', 'str1', ..., 'str9']
 long_words = [word for word in words if len(word) > 5]
 print(long_words)
 
-######################################################################
+###############################самостоятельная работа####################################
 import random
 import time
 
@@ -62,4 +63,63 @@ def simulate_load():
 simulate_load()
 
 
+#################################2.2###################################
+#класс с init и метод
+class Car:
+    def __init__(self, brand: str, model: str, year: int):
+        self.brand = brand
+        self.model = model
+        self.year = year
 
+    def print_car_info(self) -> None:
+        print(f"{self.brand} {self.model} ({self.year})")
+
+
+car1 = Car("Toyota", "Camry", 2022)
+car2 = Car("BMW", "X5", 2023)
+car3 = Car("Lada", "Vesta", 2021)
+
+car1.print_car_info()
+car2.print_car_info()
+car3.print_car_info()
+
+#класс и функция со ссылочным типом
+#Изменился исходный объект, так как в функцию на изменение имени передается ссылка на исходный объект, 
+#к тому же копии мы даже не создавали
+class Lead:
+    def __init__(self, name: str):
+        self.name = name
+
+def change_name(lead: Lead, new_name: str) -> None:
+    lead.name = new_name          # меняем атрибут объекта
+
+lead = Lead("Иван")
+print(lead.name)                  # Иван
+
+change_name(lead, "Пётр")
+print(lead.name)                  # Пётр  ← изменение видно снаружи функции!
+
+#Класс + list comprehension
+class Student:
+    def __init__(self, name: str, age: int, grades: list[float]):
+        self.name = name
+        self.age = age
+        self.grades = grades
+
+    def get_avg_grade(self) -> float:
+        if not self.grades:
+            return 0.0
+        return sum(self.grades) / len(self.grades)
+
+students = [
+    Student("Анна", 20, [4.5, 5.0, 4.8]),
+    Student("Борис", 21, [3.2, 4.0, 3.8]),
+    Student("Вера", 19, [4.9, 5.0, 4.7]),
+    Student("Андрей", 22, [4.6, 4.0, 4.9]),
+]
+
+MIN_AVG = 4.1
+good_students = [s for s in students if s.get_avg_grade() > MIN_AVG]
+
+for student in good_students:
+    print(f"{student.name}: {student.get_avg_grade():.2f}")
