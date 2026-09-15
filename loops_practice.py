@@ -1,5 +1,10 @@
-#################################2.1###################################
-#функция с match-case
+import random
+import time
+
+# ################################2.1###################################
+# функция с match-case
+
+
 def get_day_name(day: int) -> str:
     match day:
         case 1:
@@ -19,38 +24,38 @@ def get_day_name(day: int) -> str:
         case _:
             return "Неверный день недели"
 
-#список и цикл
-numbers = list(range(1, 10))    # девять чисел: 1…9
+
+# список и цикл
+numbers = list(range(1, 10))  # девять чисел: 1…9
 max_value = numbers[0]
 
 for n in numbers:
     if n > max_value:
         max_value = n
-print(f"Максимум: {max_value}")    # 9
+print(f"Максимум: {max_value}")  # 9
 # max(), sorted() и сортировка «чтобы взять последний» здесь не используются
 
-#цикл с break
+# цикл с break
 for n in list(range(1, 8)):
     print(n)
     if n == 5:
         break
 
-#List comprehension
+# List comprehension
 words = [f"str{i}" for i in range(10)]
-print(words)                         # ['str0', 'str1', ..., 'str9']
+print(words)  # ['str0', 'str1', ..., 'str9']
 
 long_words = [word for word in words if len(word) > 5]
 print(long_words)
 
-###############################самостоятельная работа####################################
-import random
-import time
+# #####################самостоятельная работа############################
+
 
 def simulate_load():
-    STEPS_COUNT = 10 
-    UP_INT_LIMIT = 100 
-    LOW_INT_LIMIT = 0 
-    LOAD_THRESHOLD = 85 #порог нагрузки
+    STEPS_COUNT = 10
+    UP_INT_LIMIT = 100
+    LOW_INT_LIMIT = 0
+    LOAD_THRESHOLD = 85  # порог нагрузки
     PAUSE_SECONDS = 0.2
     for i in range(STEPS_COUNT):
         load_value = random.randint(LOW_INT_LIMIT, UP_INT_LIMIT)
@@ -60,11 +65,12 @@ def simulate_load():
             print(f"Нагрузка {load_value}, все ОК.")
         time.sleep(PAUSE_SECONDS)
 
+
 simulate_load()
 
 
-#################################2.2###################################
-#класс с init и метод
+# ################################2.2###################################
+# класс с init и метод
 class Car:
     def __init__(self, brand: str, model: str, year: int):
         self.brand = brand
@@ -83,23 +89,27 @@ car1.print_car_info()
 car2.print_car_info()
 car3.print_car_info()
 
-#класс и функция со ссылочным типом
-#Изменился исходный объект, так как в функцию на изменение имени передается ссылка на исходный объект, 
-#к тому же копии мы даже не создавали
+
+# класс и функция со ссылочным типом
+# Изменился исходный объект, так как в функцию на изменение имени
+# передается ссылка на исходный объект, к тому же копии мы даже не создавали
 class Lead:
     def __init__(self, name: str):
         self.name = name
 
+
 def change_name(lead: Lead, new_name: str) -> None:
-    lead.name = new_name          # меняем атрибут объекта
+    lead.name = new_name  # меняем атрибут объекта
+
 
 lead = Lead("Иван")
-print(lead.name)                  # Иван
+print(lead.name)  # Иван
 
 change_name(lead, "Пётр")
-print(lead.name)                  # Пётр  ← изменение видно снаружи функции!
+print(lead.name)  # Пётр  ← изменение видно снаружи функции!
 
-#Класс + list comprehension
+
+# Класс + list comprehension
 class Student:
     def __init__(self, name: str, age: int, grades: list[float]):
         self.name = name
@@ -110,6 +120,7 @@ class Student:
         if not self.grades:
             return 0.0
         return sum(self.grades) / len(self.grades)
+
 
 students = [
     Student("Анна", 20, [4.5, 5.0, 4.8]),
