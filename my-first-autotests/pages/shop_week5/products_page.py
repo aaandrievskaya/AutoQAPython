@@ -1,4 +1,4 @@
-from playwright.sync_api import Page
+# from playwright.sync_api import Page
 from .base_page import BasePage
 from .product_detail_page import ProductDetailPage
 

@@ -1,4 +1,4 @@
-from playwright.sync_api import Page, expect
+from playwright.sync_api import expect
 from .base_page import BasePage
 from .cart_page import CartPage
 
@@ -16,7 +16,11 @@ class ProductDetailPage(BasePage):
 
     def product_title(self) -> str:
         """Имя открытого товара — его же потом ищут в корзине."""
-        return self.page.locator(".product-information").get_by_role("heading").first.inner_text()
+        return (
+            self.page.locator(".product-information")
+            .get_by_role("heading")
+            .first.inner_text()
+        )
 
     def go_to_cart(self) -> CartPage:
         """Прямой переход в корзину (если нужно)."""
