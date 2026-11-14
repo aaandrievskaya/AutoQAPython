@@ -64,13 +64,13 @@ def povorot_matrici_na_90():
 
     new_matrix = [['_'] * len(matrix) for i in range(len(matrix))]
 
-    q_j = 3
+    q_j = len(new_matrix)
     for i in range(len(new_matrix)): #
         for j in range(len(new_matrix)): #
             new_matrix[i][j] = matrix[q_j][i]
             q_j -= 1
             if q_j < 0:
-                q_j = 3     
+                q_j = len(new_matrix)     
     for i in range(len(new_matrix)):
             print(new_matrix[i])
 
