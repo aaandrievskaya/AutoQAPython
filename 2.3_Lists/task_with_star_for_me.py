@@ -77,6 +77,6 @@ def povorot_matrici_na_90():
 
 
 if __name__ == "__main__":
-    #summa_elementov_matrici()
+    summa_elementov_matrici()
     #rabota_s_diagonalyami()
-    povorot_matrici_na_90()
+    #povorot_matrici_na_90()
