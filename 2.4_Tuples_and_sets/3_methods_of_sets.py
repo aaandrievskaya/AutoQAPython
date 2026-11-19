@@ -1,7 +1,6 @@
 def kolichestvo_slov_v_tekste():
     a = input().replace('.','').replace(',','').replace(';','').replace(':','').replace('-','').replace('?','').replace('!','').lower().split()
     s = set(a)
-    print(s)
     print(len(s))
 
 def vstrechalos_li_chislo_ranshe():
@@ -17,5 +16,5 @@ def vstrechalos_li_chislo_ranshe():
 
 
 if __name__ == "__main__":
-    #kolichestvo_slov_v_tekste()
-    vstrechalos_li_chislo_ranshe()
+    kolichestvo_slov_v_tekste()
+    #vstrechalos_li_chislo_ranshe()

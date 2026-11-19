@@ -1,10 +1,15 @@
+def task_1():
+    result = [1, 2, 3, 6, 7, 8, 9, 10, 11, 12, 13]
+    res = tuple(result[0:3]*2 + result[3:4]*9 + result[4:])
+    print(res)
+
 def task_2():
     countries = ('Chad', 'Canada', 'USA', 'Germany', 'Netherlands')
     print(countries[-1])
 
 def task_3():
     primes = (31, 37, 41, 43, 47, 53, 59, 61, 67, 71)
-    print(primes[0:5])
+    print(primes[:6])
 
 def task_4():
     countries = ('Romania', 'Poland', 'Estonia', 'Bulgaria', 'Slovakia', 'Slovenia', 'Hungary')
@@ -31,6 +36,7 @@ def task_9():
     print(countries.index('Slovenia'))
 
 if __name__ == "__main__":
+    task_1()
     task_2()
     task_3()
     task_4()
