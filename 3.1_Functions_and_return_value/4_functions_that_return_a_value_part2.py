@@ -94,8 +94,8 @@ def is_password_good(password: str):
                 r4 = 1
     return (r1, r2, r3, r4) == (1, 1, 1, 1)
 
-print(is_password_good('Abcdefg1'))
-print(is_password_good('Abcdef1'))
-print(is_password_good('abcdefg1'))
-print(is_password_good('ABCDEFG1'))
-print(is_password_good('Abcdefgh'))
+# print(is_password_good('Abcdefg1'))
+# print(is_password_good('Abcdef1'))
+# print(is_password_good('abcdefg1'))
+# print(is_password_good('ABCDEFG1'))
+# print(is_password_good('Abcdefgh'))
